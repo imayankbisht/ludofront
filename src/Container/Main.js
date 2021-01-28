@@ -5,7 +5,8 @@ import Dashboard from '../Components/Dashboard';
 import Sidebar from '../Components/Sidebar';
 import Login from '../Components/login';
 import Routes from '../routes';
-export default function Main(props){
+export default function Main(props) {
+    console.log("hello");
     
     return(
         <div>
