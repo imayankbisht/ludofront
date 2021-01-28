@@ -49,16 +49,21 @@ export default function RakeHistory(props){
 
 
     async function rakeHistory(){
-        const result = await apiCall('get','https://ylrwt.sse.codesandbox.io/transaction/rakeHistory'); 
+        const result = await apiCall('get', 'https://ylrwt.sse.codesandbox.io/transaction/rakeHistory'); 
+        console.log(result);
         setData(result);
+        const serialNumber = { title: 'S.No', field: 'S.No' };
+        console.log(serialNumber);
         const keys = Object.keys(result[0]);
-        const column1 =await makeCol(keys);
+        const column1 = await makeCol(keys);
+        column1.unshift(serialNumber);
         setColumn(column1);
         setLoading(false);
     }
 
 
-    const {title} = props;
+    const { title } = props;
+    console.log(column);
     return(
         <div>
             {loading?<div style={{width:'1200px'}}><Loader/></div>:
